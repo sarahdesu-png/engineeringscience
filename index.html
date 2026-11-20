@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Kehadiran — Kelas DKM 2B</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-content">
+      <div>
+        <h1>📚 Dashboard Kehadiran Pelajar</h1>
+        <p class="subtitle">Kelas DKM 2B &nbsp;|&nbsp; <span id="current-date"></span></p>
+      </div>
+      <button class="btn-export" onclick="window.print()">🖨️ Cetak / Eksport</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- STATISTIK -->
+    <section class="stats-grid">
+      <div class="stat-card blue">
+        <div class="stat-value" id="stat-total">40</div>
+        <div class="stat-label">👥 Jumlah Pelajar</div>
+      </div>
+      <div class="stat-card green">
+        <div class="stat-value" id="stat-hadir">0</div>
+        <div class="stat-label">✅ Hadir</div>
+      </div>
+      <div class="stat-card red">
+        <div class="stat-value" id="stat-absent">0</div>
+        <div class="stat-label">❌ Tidak Hadir</div>
+      </div>
+      <div class="stat-card orange">
+        <div class="stat-value" id="stat-mc">0</div>
+        <div class="stat-label">🏥 MC / Cuti</div>
+      </div>
+      <div class="stat-card purple">
+        <div class="stat-value" id="stat-percent">0%</div>
+        <div class="stat-label">📈 % Kehadiran</div>
+      </div>
+    </section>
+
+    <!-- KANDUNGAN UTAMA: JADUAL + CARTA -->
+    <div class="content-grid">
+
+      <!-- JADUAL KEHADIRAN -->
+      <section class="table-section">
+        <h2>Senarai Kehadiran</h2>
+        <div class="table-wrapper">
+          <table id="attendance-table">
+            <thead>
+              <tr>
+                <th>Bil.</th>
+                <th>Nama Pelajar</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+              <!-- Dijana oleh JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- CARTA PAI -->
+      <section class="chart-section">
+        <h2>Carta Kehadiran</h2>
+        <div class="chart-container">
+          <canvas id="attendance-chart"></canvas>
+        </div>
+        <div id="chart-legend" class="chart-legend"></div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Sistem Kehadiran Kelas DKM 2B &nbsp;·&nbsp; Data disimpan secara tempatan dalam pelayar</p>
+  </footer>
+
+  <!-- SKRIP -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
